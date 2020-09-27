@@ -131,6 +131,8 @@ function bookmarkSubmitEditListner() {
       store.editHttpsError = true;
       render();
     } else {
+      store.editIncompleteForm = 0;
+      store.editHttpsError = 0;
       let id = getItemIdFromElement(event.currentTarget);
       api.editItem(store.EDITFORMDATA, id).then(() =>
         api
